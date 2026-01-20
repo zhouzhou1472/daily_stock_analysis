@@ -408,7 +408,10 @@ class NotificationService:
             "",
             f"*报告生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
         ])
-        
+        report_lines.extend([
+            "",
+            f"*报告生成本地时间：{(datetime.now() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')}*",
+        ])
         return "\n".join(report_lines)
     
     def _get_signal_level(self, result: AnalysisResult) -> tuple:
