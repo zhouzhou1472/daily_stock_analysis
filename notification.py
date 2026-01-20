@@ -404,10 +404,7 @@ class NotificationService:
             ])
         
         # 底部信息（去除免责声明）
-        report_lines.extend([
-            "",
-            f"*报告生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
-        ])
+
         report_lines.extend([
             "",
             f"*报告生成本地时间：{(datetime.now() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')}*",
@@ -698,9 +695,11 @@ class NotificationService:
             ])
         
         # 底部（去除免责声明）
+        
+
         report_lines.extend([
             "",
-            f"*报告生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
+            f"*报告生成本地时间：{(datetime.now() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')}*",
         ])
         
         return "\n".join(report_lines)
